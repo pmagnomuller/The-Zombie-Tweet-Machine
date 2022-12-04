@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% block content %}
+<body>
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Hello!</h1>
+    <h3 class="display-4 fw-bold">This is the Thought Machine!</h3>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">This is a tool to create tweets using ai for you! I mean, this is the future right? Why would you think of a tweet if ai can do a better, more engagable tweet than yourself?</p>
+      <p class="lead mb-4">So stop thinking and start zombie-tweeting!</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'create-tweet' %}">Create Zombie Tweet</a>
+        {% comment %} <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button> {% endcomment %}
+      </div>
+    </div>
+    <div class="overflow-hidden">
+      <div class="container px-5">
+        <table class="table">
+            
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Text</th>
+                <th scope="col">Tweet</th>
+              </tr>
+            </thead>
+            {% for textblock in object_list %}
+            <tbody>
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ textblock.text }}</td>
+                <td>{{ textblock.tweet }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock  %}
+

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+ <form action="" method="post" class="general">
+    <div class="form-group container">
+    <h1>Twitter Machine</h1>
+    <h5>Write some ideas keyword so the machine can create a tweet based on that!</h5>
+    {% csrf_token %}
+    {{ form|crispy }}
+     <div class="col-span-3 flex justify-end">
+        <input type="submit">
+     </div>
+    </div>
+ </form>
+{% endblock %}
