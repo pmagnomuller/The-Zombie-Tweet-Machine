@@ -6,5 +6,3 @@ So stop thinking and start zombie-tweeting!
 
 ![Home The Machine](/images/home_image.png "Home The Machine")
 
-## How to use
-
